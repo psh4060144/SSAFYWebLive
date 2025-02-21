@@ -1,0 +1,45 @@
+<!-- css selector 에 가중치를 계산하여, 동일한 요소를 가리키는 2개 이상의 css 규칙이 있는 경우 가장 높은 명시도의 selector 가 승리하여 스타일이 적용 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    h2 {
+      color: darkviolet !important;
+    }
+
+    p {
+      color: blue;
+    }
+
+    .orange {
+      color: orange;
+    }
+
+    .green {
+      color: green;
+    }
+
+    #red {
+      color: red;
+    }
+  </style>  <!-- 일반적으로 가장 마지막 선언이 위의 선언을 덮어쓴다 -->
+</head>  <!-- 선택자의 우선순위도 존재 -->
+<!-- 명시도 높은 순: importance > inline style > attributor(id > class > element) > 마지막에 선언된 소스코드 -->
+<!-- 일반적으로 좁은 범위, 집약적인 범위를 선택할 수록 명시도가 올라간다 -->
+
+<body>
+  <p>1</p>
+  <p class="orange">2</p>
+  <p class="green orange">3</p>  <!-- 여러 개의 class 를 동시에 선언하려면 띄어쓰기 -->
+  <p class="orange green">4</p>
+  <p id="red" class="orange">5</p>
+  <h2 id="red" class="orange">6</h2>
+  <p id="red" class="orange" style="color: brown;">7</p>
+  <h2 id="red" class="orange" style="color: brown;">8</h2>
+</body>
+
+</html>

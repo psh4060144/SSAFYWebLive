@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      color: red
+    }
+
+    h2 {
+      color: orange  
+    }
+
+    h3,
+    h4 {
+      color: blue
+    }
+
+    .green {
+      color: green
+    }
+
+    #purple {
+      color: purple
+    }
+
+    .green > span {
+      font-size: 50px
+    }
+
+    .green li {
+      color: cyan
+    }
+  </style>  <!-- 스타일이 중복으로 적용되었을 때 우선순위가 있다 -->
+  <!-- .: 주어진 클래스 속성을 가진 모든 요소를 선택 -->
+  <!-- #: 주어진 id 속성을 가진 요소 선택. 주어진 id 요소가 딱 하나만 있어야 함 -->
+</head>
+
+<body>
+  <h1 class="green">Heading</h1>
+  <h2>선택자</h2>
+  <h3>연습</h3>
+  <h4>반가워요</h4>
+  <p id="purple">과목 목록</p>  <!-- 같은 id를 여러 곳에 쓸 수 없음음 -->
+  <ul class="green">
+    <li>파이썬</li>
+    <li>알고리즘</li>
+    <li>웹
+      <ol>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>PYTHON</li>
+      </ol>
+    </li>
+  </ul>
+  <p class="green">Lorem, <span>ipsum</span> dolor.</p>
+</body>
+
+</html>
